@@ -37,7 +37,7 @@ public class LoadCollectionCSV extends LoadCollection {
 	@Override
 	public CompleteCollectionAndLog processCollecccion(ArrayList<String> DateEntrada) {
 		Log=new ArrayList<String>();
-		cSVImporter=new CSVImporter(this);
+		cSVImporter=new CSVImporter(Log);
 		
 		if (DateEntrada!=null)	
 		{
