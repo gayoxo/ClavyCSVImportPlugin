@@ -106,7 +106,7 @@ public class CSVImporter {
 		CompleteCollection CC= csVimpo.getCollection();
 		
 		for (CompleteDocuments docume : CC.getEstructuras()) {
-			System.out.println("docu"+docume.getDescriptionText());
+			System.out.println("docu__>"+docume.getDescriptionText());
 			for (CompleteElement eleme : docume.getDescription()) {
 				System.out.println("-----"+eleme.getHastype().getName()+
 						":"+((CompleteTextElement)eleme).getValue());
