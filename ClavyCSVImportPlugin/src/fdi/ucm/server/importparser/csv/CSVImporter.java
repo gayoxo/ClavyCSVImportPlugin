@@ -28,7 +28,7 @@ public class CSVImporter {
 		Logs=logs;
 	}
 
-	public void ProcessFile(String fileCSV) {
+	public void ProcessFile(String fileCSV, String description) {
 		
 		
 		try {
@@ -68,6 +68,10 @@ public class CSVImporter {
 		        		
 		        		CompleteTextElementType Estees=listaElementos.get(i);
 		        		CD.getDescription().add(new CompleteTextElement(Estees, tempStr));
+		        		
+		        		
+		        		if (Estees.getName().toLowerCase().equals(description.toLowerCase()))
+		        			CD.setDescriptionText(tempStr);
 		        	}
 		        	
 		        	
@@ -98,7 +102,7 @@ public class CSVImporter {
 	public static void main(String[] args) {
 		LinkedList<String> SS=new LinkedList<String>();
 		CSVImporter csVimpo=new CSVImporter(SS);
-		csVimpo.ProcessFile("ejemplo/ejemplo.csv");
+		csVimpo.ProcessFile("ejemplo/ejemplo.csv", "id");
 		CompleteCollection CC= csVimpo.getCollection();
 		
 		for (CompleteDocuments docume : CC.getEstructuras()) {

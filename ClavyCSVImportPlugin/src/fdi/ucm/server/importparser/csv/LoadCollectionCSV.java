@@ -26,6 +26,7 @@ public class LoadCollectionCSV extends LoadCollection {
 		{
 			ArrayList<ImportExportPair> ListaCampos=new ArrayList<ImportExportPair>();
 			ListaCampos.add(new ImportExportPair(ImportExportDataEnum.File, "CSV"));
+			ListaCampos.add(new ImportExportPair(ImportExportDataEnum.Text, "Description Field"));
 			Parametros=ListaCampos;
 			return ListaCampos;
 		}
@@ -42,8 +43,9 @@ public class LoadCollectionCSV extends LoadCollection {
 		if (DateEntrada!=null)	
 		{
 			String FileCSV = DateEntrada.get(0);
+			String Description = DateEntrada.get(1);
 			
-			cSVImporter.ProcessFile(FileCSV);
+			cSVImporter.ProcessFile(FileCSV,Description);
 		}
 		
 		
