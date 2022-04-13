@@ -52,7 +52,7 @@ public class CSVImporter {
 		        	}
 		        
 		        for (int i = 0; i < tempArr.length; i++) {
-		        	String tempStr=tempArr[i]; 
+		        	String tempStr=tempArr[i].trim(); 
 		        	
 		        	if (PrimeraCategoria)
 		        	{
@@ -64,7 +64,8 @@ public class CSVImporter {
 		        	{
 		        		
 		        		CompleteTextElementType Estees=listaElementos.get(i);
-		        		CD.getDescription().add(new CompleteTextElement(Estees, tempStr));
+		        		if (!tempStr.isEmpty())
+		        			CD.getDescription().add(new CompleteTextElement(Estees, tempStr));
 		        		
 		        		
 		        		if (Estees.getName().toLowerCase().equals(description.toLowerCase()))
